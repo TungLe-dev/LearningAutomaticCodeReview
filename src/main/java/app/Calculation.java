@@ -23,5 +23,8 @@ public class Calculation {
         }
         return a / b;
     }
+    public static void printFeature(){
+      System.out.println("This is a test");
+    }
 }
 
