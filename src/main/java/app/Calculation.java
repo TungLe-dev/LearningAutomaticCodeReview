@@ -58,7 +58,6 @@ public class Calculation {
     return a / b;
   }
 
-  /** Prints a feature message. */
   public static void printFeature() {
     System.out.println("This is a test");
   }
