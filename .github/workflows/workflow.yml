@@ -1,8 +1,5 @@
 name: Automated Code Review via Pull Request
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -28,10 +25,10 @@ jobs:
         run: mvn -B clean test
 
       - name: Run Checkstyle
-        run: mvn checkstyle:checkstyle
-        continue-on-error: true # Để job chạy tiếp xuống báo cáo bình luận dù có lỗi
+        run: mvn -B checkstyle:check
 
       - name: Inline Checkstyle Feedback
+        if: always()
         uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
