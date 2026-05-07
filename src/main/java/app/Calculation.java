@@ -5,26 +5,62 @@ package app;
  */
 public class Calculation {
 
-    public static double add(double a, double b) {
-        return a + b;
-    }
+  /** Utility class - prevent instantiation. */
+  private Calculation() {
+    throw new AssertionError("No instances.");
+  }
 
-    public static double subtract(double a, double b) {
-        return a - b;
-    }
+  /**
+   * Adds two numbers.
+   *
+   * @param a first number
+   * @param b second number
+   * @return {@code a + b}
+   */
+  public static double add(double a, double b) {
+    return a + b;
+  }
 
-    public static double multiply(double a, double b) {
-        return a * b;
-    }
+  /**
+   * Subtracts {@code b} from {@code a}.
+   *
+   * @param a first number
+   * @param b second number
+   * @return {@code a - b}
+   */
+  public static double subtract(double a, double b) {
+    return a - b;
+  }
 
-    public static double divide(double a, double b) {
-        if (b == 0) {
-            throw new IllegalArgumentException("Division by zero");
-        }
-        return a / b;
+  /**
+   * Multiplies two numbers.
+   *
+   * @param a first number
+   * @param b second number
+   * @return {@code a * b}
+   */
+  public static double multiply(double a, double b) {
+    return a * b;
+  }
+
+  /**
+   * Divides {@code a} by {@code b}.
+   *
+   * @param a dividend
+   * @param b divisor
+   * @return {@code a / b}
+   * @throws IllegalArgumentException if {@code b} is zero
+   */
+  public static double divide(double a, double b) {
+    if (b == 0) {
+      throw new IllegalArgumentException("Division by zero");
     }
-    public static void printFeature(){
-      System.out.println("This is a test");
-    }
+    return a / b;
+  }
+
+  /** Prints a feature message. */
+  public static void printFeature() {
+    System.out.println("This is a test");
+  }
+
 }
-
