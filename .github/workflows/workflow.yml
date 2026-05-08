@@ -28,9 +28,9 @@ jobs:
         run: mvn -B checkstyle:check
 
       - name: Inline Checkstyle Feedback
-        if: always()
+        if: failure()
         uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          level: warning
+          level: error
