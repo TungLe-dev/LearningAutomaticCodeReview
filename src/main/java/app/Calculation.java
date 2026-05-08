@@ -43,14 +43,6 @@ public class Calculation {
     return a * b;
   }
 
-  /**
-   * Divides {@code a} by {@code b}.
-   *
-   * @param a dividend
-   * @param b divisor
-   * @return {@code a / b}
-   * @throws IllegalArgumentException if {@code b} is zero
-   */
   public static double divide(double a, double b) {
     if (b == 0) {
       throw new IllegalArgumentException("Division by zero");
